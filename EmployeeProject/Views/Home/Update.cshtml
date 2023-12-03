@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Employee
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Personel Güncelle</h1>
+@using (Html.BeginForm("Update", "Home", FormMethod.Post))
+{
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.EmployeeID, new { @class = "form-control", @readonly =true })
+
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+
+    @Html.Label("Soyad")
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+
+    @Html.Label("Cinsiyet")
+    @Html.TextBoxFor(x => x.EmployeeGender, new { @class = "form-control" })
+
+    @Html.Label("Doğum Tarihi")
+    @Html.TextBoxFor(x => x.EmployeeBirthDate, new { @class = "form-control" })
+
+    @Html.Label("Email")
+    @Html.TextBoxFor(x => x.EmployeeEmail, new { @class = "form-control" })
+
+    @Html.Label("Telefon")
+    @Html.TextBoxFor(x => x.EmployeePhoneNumber, new { @class = "form-control" })
+    <br />
+    <div class="col-12">
+        <button class="btn btn-success" type="submit">Güncelle</button>
+    </div>
+}

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Employee>
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h4>Personel Detay </h4>
+
+<body>
+    <table>
+        @foreach (var item in Model)
+        {
+            @item.EmployeeID <br />
+            @item.EmployeeName <br />
+            @item.EmployeeSurname<br />
+            @item.EmployeeGender<br />
+            @item.EmployeePhoneNumber<br />
+            @item.EmployeeBirthDate
+        }
+    </table>
+</body>
+
+
+

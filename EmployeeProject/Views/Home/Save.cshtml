@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Employee
+
+@{
+    ViewData["Title"] = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yeni Personel Ekle</h1>
+
+@using (Html.BeginForm("Save","Home", FormMethod.Post))
+{
+<div class="col-md-6 mb-3">
+    <label for="validationCustom01" class="form-label">Ad</label>
+    @Html.TextBoxFor(x => x.EmployeeName, new{@class="form-control" })
+    @Html.ValidationMessageFor(x => x.EmployeeName)
+    @*<input type="text" class="form-control" id="validationCustom01" name="EmployeeName" value="" required>*@
+    <br />
+    <label for="validationCustom02" class="form-label">Soyad</label>
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.EmployeeSurname)
+    @*<input type="text" class="form-control" id="validationCustom02"  name="EmployeeSurname" value="" required>*@
+    <br />
+    <label for="validationCustom03" class="form-label">Cinsiyet</label>
+    @Html.TextBoxFor(x => x.EmployeeGender, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.EmployeeGender,"",new{ @class="text-danger"})
+    @*<input type="text" class="form-control" id="validationCustom03" name="EmployeeGender" value="" required>*@
+    <br />
+    <label for="validationCustom04" class="form-label">Doğum Tarihi</label>
+    @Html.TextBoxFor(x => x.EmployeeBirthDate, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.EmployeeBirthDate, "", new { @class = "text-danger" })
+
+<br />
+    <label for="validationCustom05" class="form-label">E-Mail</label>
+    @Html.TextBoxFor(x => x.EmployeeEmail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.EmployeeEmail, "", new { @class = "text-danger" })
+    @*<input type="email" class="form-control" id="validationCustom05" name="EmployeeEmail" value="" required>*@
+    <br />
+    <label for="validationCustom06" class="form-label">Telefon Numarası</label>
+    @Html.TextBoxFor(x => x.EmployeePhoneNumber, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.EmployeePhoneNumber, "", new { @class = "text-danger" })
+
+    <br />
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Kaydet</button>
+    </div>
+
+</div>
+
+}

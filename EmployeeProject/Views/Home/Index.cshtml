@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concrete
+@model List<Employee>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hoşgeldiniz</h1>
+    <p>building Web apps with ASP.NET Core MVC</p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Adı</th>
+            <th scope="col">Soyadı</th>
+            <th scope="col">Cinsiyet</th>
+            <th scope="col">Doğum Tarihi</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.EmployeeID</th>
+                <td>@item.EmployeeName</td>
+                <td>@item.EmployeeSurname</td>
+                <td>@item.EmployeeGender</td>
+                <td>@(((DateTime)item.EmployeeBirthDate).ToString("dd.MM.yyyy"))</td>
+                <td><a href="/Home/Detail/@item.EmployeeID/" class="btn btn-warning">Gör</a></td>
+                <td><a href="/Home/Update/@item.EmployeeID" class="btn btn-info">Güncelle</a></td>
+                <td><a href="/Home/Delete/@item.EmployeeID" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
