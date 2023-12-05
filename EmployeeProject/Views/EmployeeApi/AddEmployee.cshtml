@@ -1,0 +1,31 @@
+﻿@model EmployeeProject.Controllers.EmployeeApiController.ClassEmp1
+
+@{
+    ViewData["Title"] = "AddEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Personel Ekle</h1>
+
+<form method="post">
+    <label>Personel adı</label>
+    <input type="text" asp-for="@Model.EmployeeName" class="form-control" />
+    <br />
+    <label>Personel soyadı</label>
+    <input type="text" asp-for="@Model.EmployeeSurname" class="form-control" />
+    <br />
+    <label>Personel cinsiyet</label>
+    <input type="text" asp-for="@Model.EmployeeGender" class="form-control" />
+    <br />
+    <label>Personel dogum tarihi</label>
+    <input type="text" asp-for="@Model.EmployeeBirthDate" class="form-control" />
+    <br />
+    <label>Personel Email</label>
+    <input type="text" asp-for="@Model.EmployeeEmail" class="form-control" />
+    <br />
+    <label>Personel Telefon</label>
+    <input type="text" asp-for="@Model.EmployeePhoneNumber" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-info">Personel Ekle</button>
+
+</form>

@@ -9,7 +9,7 @@
 @using (Html.BeginForm("Update", "Home", FormMethod.Post))
 {
     @Html.Label("ID")
-    @Html.TextBoxFor(x => x.EmployeeID, new { @class = "form-control", @readonly =true })
+    @Html.TextBoxFor(x => x.EmployeeID, new { @class = "form-control", @readonly = true })
 
     @Html.Label("Ad")
     @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
@@ -21,7 +21,7 @@
     @Html.TextBoxFor(x => x.EmployeeGender, new { @class = "form-control" })
 
     @Html.Label("Doğum Tarihi")
-    @Html.TextBoxFor(x => x.EmployeeBirthDate, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.EmployeeBirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
 
     @Html.Label("Email")
     @Html.TextBoxFor(x => x.EmployeeEmail, new { @class = "form-control" })

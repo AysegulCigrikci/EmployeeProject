@@ -33,14 +33,14 @@ namespace EmployeeProject.Controllers
             return View(values);
         }
 
-        //Detail Employee
+        //Personel Detay
         public IActionResult Detail(int id)
         {
             var values = cm.GetEmployeeByID(id);
             return View(values);
         }
 
-        //id ye göre güncellenecek data
+        //id ye göre güncellenecek data getiriliyor
         [HttpGet]
         public IActionResult Update(int id)
         {
